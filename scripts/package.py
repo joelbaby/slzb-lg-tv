@@ -13,6 +13,7 @@ LIMIT = 500_000
 # Keep an explicit inventory so local config, test captures, and keys cannot be bundled.
 FILES = (
     APP / "meta.json",
+    APP / "icon.png",
     APP / "app.be",
     APP / "ui.html",
     APP / "ui.css",

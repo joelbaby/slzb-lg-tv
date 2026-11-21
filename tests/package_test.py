@@ -17,7 +17,7 @@ class InstallerTest(unittest.TestCase):
             self.assertEqual(set(names), {
                 "meta.json", "app.be", "ui.html", "ui.css", "ui.js", "protocol.js", "tls.js",
                 "README.md", "LICENSE", "bearssl-license.txt", "emscripten-license.txt",
-                "musl-copyright.txt", "berry-example.js",
+                "musl-copyright.txt", "berry-example.js", "icon.png",
             })
             self.assertEqual(len(set(names)), len(names))
             for entry in bundle.infolist():
@@ -28,6 +28,8 @@ class InstallerTest(unittest.TestCase):
             self.assertIsNone(bundle.testzip())
             manifest = json.loads(bundle.read("meta.json"))
             self.assertEqual(manifest["folder"], "lg_tv")
+            self.assertEqual(manifest["img"], "icon.png")
+            self.assertTrue(bundle.read(manifest["img"]).startswith(b"\x89PNG\r\n\x1a\n"))
             self.assertEqual(manifest["permissions"], [])
             self.assertEqual(manifest["minFw"], "v3.4.5.dev1")
             self.assertEqual(manifest["models"], ["SLZB-MR4U"])

@@ -1,4 +1,4 @@
-# SLZB LG TV
+# LG TV Control
 
 Control an LG webOS TV **from your SLZB-OS Berry scripts**, even when the browser is closed. Turn it on or off, change the volume, mute or unmute, select an input, open an installed app, or display a notification. The installable app handles pairing and keeps the key on the coordinator.
 
@@ -51,4 +51,4 @@ python3 tests/package_test.py
 
 The installer is a flat, stored ZIP with the manifest first and no local settings or credentials. The Berry tests run the production backend against firmware substitutes. The Node test uses a local TLS fixture and a disposable certificate.
 
-MIT licensed. Independent of LG and SMLIGHT.
+MIT licensed. Independent project; not affiliated with, endorsed by, or sponsored by LG Electronics. LG is a trademark of its respective owner. Independent of SMLIGHT.
