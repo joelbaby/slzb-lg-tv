@@ -38,7 +38,7 @@ Run the app on a trusted local network. The pairing page uses TLS to the TV via 
 
 ## Build and test
 
-Requires Git, GNU Make, Python 3, a C compiler, Node.js, and OpenSSL. The build fetches pinned BearSSL and Emscripten sources and their licence notices. [Build inputs](vendor/README.md)
+Requires Git, GNU Make, Python 3, a C compiler, the Readline development headers (`libreadline-dev` on Ubuntu), Node.js, and OpenSSL. The build fetches pinned BearSSL and Emscripten sources and their licence notices. [Build inputs](vendor/README.md)
 
 ```sh
 scripts/build-tls.sh
