@@ -99,10 +99,13 @@
         <form id="input-form">
           <label for="input-preset" class="form-label">Target input</label>
           <select id="input-preset" class="form-select">
+            <option value="com.webos.app.livetv">Live TV (aerial/cable)</option>
             <option value="HDMI_1">HDMI 1</option>
             <option value="HDMI_2">HDMI 2</option>
             <option value="HDMI_3">HDMI 3</option>
             <option value="HDMI_4">HDMI 4</option>
+            <option value="AV_1">AV / Composite (if fitted)</option>
+            <option value="COMP_1">Component (if fitted)</option>
             <option value="custom">Custom input ID</option>
           </select>
           <div id="input-custom-field" class="mt-2" hidden>
@@ -120,6 +123,12 @@
           <label for="launch-preset" class="form-label">Installed app to open</label>
           <select id="launch-preset" class="form-select">
             <option value="youtube.leanback.v4">YouTube</option>
+            <option value="netflix">Netflix</option>
+            <option value="amazon">Prime Video</option>
+            <option value="com.disney.disneyplus-prod">Disney+</option>
+            <option value="com.apple.appletv">Apple TV</option>
+            <option value="hulu">Hulu</option>
+            <option value="com.webos.app.browser">Web browser</option>
             <option value="custom">Custom app ID</option>
           </select>
           <div id="launch-custom-field" class="mt-2" hidden>
@@ -128,6 +137,7 @@
                    autocomplete="off" spellcheck="false" disabled>
           </div>
           <button class="btn btn-outline-secondary mt-2" type="submit">Launch app</button>
+          <p class="small mt-2 mb-0">Common presets, not a list read from your TV. Apps must be installed and available in your region; IDs can vary.</p>
         </form>
       </fieldset>
 

@@ -1,7 +1,7 @@
 {
   "name": "LG TV",
   "folder": "lg_tv",
-  "ver": "0.3.0",
+  "ver": "0.3.1",
   "desc": "Control LG webOS power, audio, inputs, apps, and notifications from Berry",
   "permissions": [],
   "minFw": "v3.4.5.dev1",

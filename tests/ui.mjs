@@ -153,6 +153,24 @@ for (const [action, preset, custom] of [
     takeCommand(action, custom);
 }
 
+for (const [id, action] of [["com.webos.app.livetv", "launch"], ["AV_1", "input"], ["COMP_1", "input"]]) {
+    element("input-preset").value = id;
+    element("input-preset").handlers.change();
+    assert.equal(commands.length, 0);
+    submit("input-form");
+    await settle();
+    takeCommand(action, id);
+    assert.equal(element("berry-call").value, `tv_request("${action}", "${id}")`);
+}
+for (const id of ["netflix", "amazon", "com.disney.disneyplus-prod", "com.apple.appletv", "hulu", "com.webos.app.browser"]) {
+    element("launch-preset").value = id;
+    submit("launch-form");
+    await settle();
+    takeCommand("launch", id);
+}
+// Return to custom input validation for the checks below.
+element("input-preset").value = "custom";
+
 const notification = 'Café "ready" \\ 📺';
 element("notification").value = notification;
 submit("notify-form");

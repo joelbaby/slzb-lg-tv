@@ -256,7 +256,10 @@ for (const [action, label] of [["input", "Switch input"], ["launch", "Launch app
         if (!/^[A-Za-z0-9_.-]{1,96}$/.test(value)) {
             return testResult(label, "Enter an ID with letters, digits, periods, underscores, or hyphens.");
         }
-        sendTest(action, `${label} · ${value}`, value);
+        // The tuner is a built-in app, not an external input ID.
+        const liveTv = action === "input" && preset.value === "com.webos.app.livetv";
+        sendTest(liveTv ? "launch" : action,
+            liveTv ? "Live TV" : `${label} · ${value}`, value);
     });
 }
 

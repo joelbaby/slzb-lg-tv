@@ -33,6 +33,8 @@ Examples for the default channels are in [the examples directory](../examples).
 
 Input and app IDs can contain 1–96 ASCII letters, digits, underscores, periods, or hyphens. IDs depend on the TV model, firmware, and installed apps. The YouTube example comes from [LG's Connect SDK](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/WebOSTVService.java#L497-L523). The app sends known commands without enumerating inputs or apps. [webOS client request formats](https://github.com/bendavid/aiopylgtv/blob/master/aiopylgtv/webos_client.py)
 
+For aerial/cable TV, use `tv_request("launch", "com.webos.app.livetv")`. Live TV is a built-in app rather than an external input ID. The [simple examples](../examples/README.md) include additional common input and app presets; availability varies by TV and region.
+
 With a power-only pairing from v0.1, open the app in one tab, click **Update pairing**, and approve the new permissions on the TV. The app verifies the new key on a second connection before saving it. You can cancel up to the start of the save. The local power-only key is retained through the upgrade. If the app cannot confirm which pairing was saved, reopen the page to check. The TV controls whether its previously issued key remains valid. The requested permissions cover power, audio, input selection, launching apps, and toast notifications. [LG Connect SDK permission definitions](https://github.com/ConnectSDK/Connect-SDK-Android-Core/blob/master/src/com/connectsdk/service/webos/WebOSTVDeviceService.java#L134-L159)
 
 | Result | Meaning |

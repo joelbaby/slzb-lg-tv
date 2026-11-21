@@ -20,8 +20,19 @@ Then use **one of these calls** wherever your script needs it:
 | Mute | `tv_request("mute", true)` |
 | Unmute | `tv_request("mute", false)` |
 | Switch to HDMI 2 | `tv_request("input", "HDMI_2")` |
+| Watch Live TV (aerial/cable) | `tv_request("launch", "com.webos.app.livetv")` |
+| Switch to AV / Composite (if fitted) | `tv_request("input", "AV_1")` |
+| Switch to Component (if fitted) | `tv_request("input", "COMP_1")` |
+| Open Netflix | `tv_request("launch", "netflix")` |
+| Open Prime Video | `tv_request("launch", "amazon")` |
+| Open Disney+ | `tv_request("launch", "com.disney.disneyplus-prod")` |
+| Open Apple TV | `tv_request("launch", "com.apple.appletv")` |
+| Open Hulu | `tv_request("launch", "hulu")` |
+| Open web browser | `tv_request("launch", "com.webos.app.browser")` |
 | Open YouTube | `tv_request("launch", "youtube.leanback.v4")` |
 | Show a message | `tv_request("notify", "The washer has finished")` |
+
+Live TV uses `launch`, not `input`: webOS exposes its tuner as an app. Extra inputs require the corresponding physical connector. App presets require installation and regional availability; they are not an inventory read from the TV. See [identifier sources and limits](../docs/research/presets.md).
 
 Volume is an integer from 0 to 100. Notifications are short plain text (up to 160 UTF-8 bytes). Input and app IDs depend on the TV; HDMI 2 and the YouTube ID above were tested on an LG GX with those features available.
 
