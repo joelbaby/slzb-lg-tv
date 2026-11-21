@@ -12,7 +12,7 @@ A fresh registration test supplied a cryptographically random candidate client k
 
 Bundle a pinned MIT BearSSL TLS client as WebAssembly/classic JavaScript in the app page. The app backend owns a bounded TCP connection to the configured TV's fixed control port and carries opaque TLS records between the page and TV. The page implements TLS and WebSocket framing, receives the TV-issued key, and returns it to the app backend for private app-scoped storage. No separate helper, direct browser-to-TV connection, certificate-bypass UI, public relay, or Home Assistant service is needed.
 
-The same connection could handle power-off while the app page is open, avoiding the shared HTTP client entirely. This is a candidate architecture pending the real iframe, package-size, and hardware proof, not a compatibility guarantee. Unattended TV automations while the app page is closed are outside v1.
+The browser TLS connection is a setup-time pairing transport only. The clarified product requirement is power control from other Berry scripts with no browser open. Runtime power commands therefore need a coordinator-side transport; a browser-dependent Off implementation does not satisfy v1.
 
 ## Security boundary
 
