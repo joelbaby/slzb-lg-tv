@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+node_modules/
+.scratch/
+.private/
+*.private*
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.bec
+coverage/
+dist/
+local-config.json
