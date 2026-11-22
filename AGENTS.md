@@ -1,7 +1,5 @@
 # LG TV app development
 
-Use GPT-6 Astra or Sol agents. Flash delegation is not authorized for this repository.
-
 ## Agent skills
 
 ### Issue tracker
